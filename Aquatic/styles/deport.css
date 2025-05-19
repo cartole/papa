@@ -1,0 +1,160 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+  }
+  
+  header {
+    background-color: #004080;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  .home-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  main {
+    padding: 2rem;
+  }
+  
+  .plantilla h1, .plantilla h2 {
+    text-align: center;
+    color: #004080;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+  
+  .card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    max-width: 150px;
+    margin-bottom: 1rem;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 64, 128, 0.2);
+  }
+  
+  .extra-info {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    margin-top: 0.5rem;
+  }
+  
+  .card.active .extra-info {
+    max-height: 200px;
+    opacity: 1;
+  }
+  
+  .card h3 {
+    margin: 0.5rem 0;
+    color: #004080;
+  }
+  
+  footer {
+    background-color: #002244;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+  /* --- VISTA MÓVIL --- */
+@media screen and (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1rem;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+    }
+  
+    nav li {
+      width: 100%;
+    }
+  
+    nav a {
+      display: block;
+      padding: 0.5rem;
+      background-color: #0066cd;
+      border-radius: 8px;
+      text-align: center;
+    }
+  
+    .logros-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .logro {
+      width: 90%;
+    }
+  
+    .card {
+      width: 90%;
+      margin: 1rem auto;
+    }
+  }
+  

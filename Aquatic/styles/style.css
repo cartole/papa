@@ -1,0 +1,305 @@
+/* Reset */
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f9fa;
+    color: #f8f8f8;
+    scroll-behavior: smooth;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Header/Nav */
+  header {
+    background-color: #003366;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .logo img {
+    height: 45px;
+    margin-right: 12px;
+    transition: transform 0.3s ease;
+  }
+  .logo:hover img {
+    transform: scale(1.1);
+  }
+  .logo span {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+  }
+  nav li {
+    font-weight: 600;
+  }
+  nav a {
+    color: white;
+    font-size: 1.1rem;
+    padding: 0.25rem 0;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+  }
+  nav a:hover,
+  nav a.active {
+    color: #ffcc00;
+    border-bottom: 3px solid #ffcc00;
+  }
+
+  /* Hero Section */
+  .hero {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(../images/club.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 1rem 2rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.75rem 2rem;
+    font-weight: bold;
+    color: #003366;
+    background-color: #ffcc00;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  .btn-primary:hover {
+    background-color: #e6b800;
+  }
+
+  /* Sobre nosotros Section */
+  .about {
+    background-color: white;
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: 4rem auto;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  }
+  .about h2 {
+    font-size: 2.5rem;
+    color: #003366;
+    margin-bottom: 1rem;
+  }
+  .about p {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* Cards Section (deportistas, tecnicos...) */
+  .cards-section {
+    max-width: 1200px;
+    margin: 3rem auto 5rem;
+    padding: 0 1rem;
+  }
+  .cards-section h2 {
+    text-align: center;
+    color: #003366;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 2rem;
+  }
+  .card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.15);
+  }
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+  }
+  .card-content {
+    padding: 1.2rem 1.5rem;
+  }
+  .card-content h3 {
+    font-size: 1.3rem;
+    color: #003366;
+    margin-bottom: 0.5rem;
+  }
+  .card-content p {
+    font-size: 1rem;
+    color: #666;
+  }
+
+  /* Logros Section slider */
+  .logros-section {
+    background-color: #003366;
+    color: white;
+    padding: 3rem 1rem 4rem;
+    text-align: center;
+  }
+  .logros-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  .logros-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 2rem;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: #ffcc00 transparent;
+  }
+  .logros-slider::-webkit-scrollbar {
+    height: 8px;
+  }
+  .logros-slider::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .logros-slider::-webkit-scrollbar-thumb {
+    background-color: #ffcc00;
+    border-radius: 10px;
+  }
+  .logro-card {
+    flex: 0 0 auto;
+    min-width: 280px;
+    background: #0055aa;
+    border-radius: 16px;
+    padding: 1.5rem 1rem;
+    scroll-snap-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  .logro-card:hover {
+    transform: scale(1.05);
+    background: #ffcc00;
+    color: #003366;
+    box-shadow: 0 10px 26px rgba(255,204,0,0.6);
+  }
+  .logro-card h3 {
+    margin-bottom: 0.8rem;
+  }
+  .logro-card p {
+    font-size: 0.95rem;
+    line-height: 1.3;
+  }
+
+  /* CTA Final */
+  .cta-final {
+    background-color: #a5fa37;
+    color: #003366;
+    text-align: center;
+    padding: 3rem 2rem;
+    border-radius: 24px;
+    margin: 4rem 1rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 8px 20px rgba(165,250,55,0.5);
+  }
+  .cta-final a {
+    background-color: #003366;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,51,102,0.7);
+  }
+  .cta-final a:hover {
+    background-color: #001f3f;
+    box-shadow: 0 6px 18px rgba(0,31,63,0.9);
+  }
+
+  /* Footer */
+  footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    font-weight: 600;
+    margin-top: 6rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    header {
+      padding: 1rem 1.5rem;
+    }
+    nav ul {
+      gap: 1rem;
+    }
+    .hero-content h1 {
+      font-size: 2.2rem;
+    }
+    .hero-content p {
+      font-size: 1rem;
+    }
+    .cards-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 480px) {
+    .cards-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-content h1 {
+      font-size: 1.8rem;
+    }
+    .hero-content p {
+      font-size: 0.9rem;
+    }
+  }
